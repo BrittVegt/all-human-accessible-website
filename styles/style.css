@@ -22,3 +22,13 @@ header {
         padding: 15px 30px;
     }
 }
+
+aside {
+   @media (min-width: 630px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;  
+   }
+    
+    
+
+}
