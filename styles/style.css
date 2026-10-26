@@ -32,3 +32,11 @@ aside {
     
 
 }
+.gebieden-lijst summary {
+    background-color: antiquewhite;
+    color:rgb(82, 130, 112);
+    padding: 13px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+}
