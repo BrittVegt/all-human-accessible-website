@@ -32,7 +32,7 @@ aside {
 }
 .gebieden-lijst summary {
     background-color: antiquewhite;
-    color:rgb(82, 130, 112);
+    color:rgb(147, 176, 147);
     padding: 1em,1em;
     cursor: pointer;
     font-weight: bold;
@@ -45,6 +45,9 @@ aside {
     padding: .625em;
     position: fixed;
     bottom: 0;
+    inset-inline: 0;
+    background-color: #a67d51;
+    
 
      @media  (min-width: 48.75em) {
        gap: 15em;
@@ -61,9 +64,4 @@ aside {
         font-size: 1em;
     }
 
-}
-
-.strookje-voor-navigatie {
-    background-color: #72583c;
-    padding:1.875em 1.875em;
 }
