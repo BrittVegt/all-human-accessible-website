@@ -1,10 +1,11 @@
 body {
     margin: 0;
-    font-family: system-ui, sans-serif;
-    min-height: 50vh;
+    font-family: Trebuchet MS, sans-serif;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background: rgb(147, 176, 147);
+    padding-bottom: 3.5em;
 }
 
 /* header */
@@ -30,13 +31,31 @@ aside {
    }
     
 }
+
+.gebieden img {
+    border-radius: 1em;
+    box-shadow: 1em 0.5em rgb(147, 175, 187)
+}
+
+/* Dit is voor de zwarte puntjes weg te halen die voor de knoppen stonden */
+.gebieden-lijst {
+    list-style: none;   
+    padding-left: 0;    
+    margin: 0;
+}
+
 .gebieden-lijst summary {
+    position: relative;
     background-color: antiquewhite;
     color:rgb(147, 176, 147);
-    padding: 1em,1em;
-    cursor: pointer;
+    padding: 1em 1em 1em 2em;
     font-weight: bold;
-    list-style: none;
+    border-radius: 1em;
+    box-shadow: 0.5em 0.5em rgb(147, 175, 187)
+}
+
+.gebieden-lijst summary::before {
+    content:"🌼"
 }
 
 .navigatie{
@@ -53,7 +72,6 @@ aside {
        gap: 15em;
     
     }
-
     a {
         display: flex;
         flex-direction: column;
