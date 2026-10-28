@@ -58,6 +58,20 @@ aside {
     padding-left: 0;    
     margin: 0;
 }
+
+.gebieden-lijst summary::before {
+    content:"🌼"
+}
+
+.gebieden-lijst summary {
+    position: relative;
+    background-color: antiquewhite;
+    color:rgb(147, 176, 147);
+    padding: 1em 1em 1em 2em;
+    font-weight: bold;
+    border-radius: 1em;
+}
+
 /* aarbei */
 .aardbei-container{
       background-color:#c7a685;
@@ -289,21 +303,6 @@ grid-column-start:2;
 }
 
 
-.gebieden-lijst summary {
-    position: relative;
-    background-color: antiquewhite;
-    color:rgb(147, 176, 147);
-    padding: 1em 1em 1em 2em;
-    font-weight: bold;
-    border-radius: 1em;
-}
-
-
-
-
-.gebieden-lijst summary::before {
-    content:"🌼"
-}
 
 .navigatie{
     display: flex;
