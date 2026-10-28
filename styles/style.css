@@ -3,6 +3,11 @@ html, body {
     overflow-x: hidden;
 }
 
+button:focus-visible {
+  outline: 2px solid rgb(235, 187, 148);
+  outline-offset: 2px;
+}
+
 body {
     margin: 0;
     font-family: Trebuchet MS, sans-serif;
@@ -45,7 +50,6 @@ aside {
 
 .gebieden img {
     border-radius: 1em;
-    box-shadow: 1em 0.5em rgb(147, 175, 187)
 }
 
 /* Dit is voor de zwarte puntjes weg te halen die voor de knoppen stonden */
@@ -54,6 +58,236 @@ aside {
     padding-left: 0;    
     margin: 0;
 }
+/* aarbei */
+.aardbei-container{
+      background-color:#c7a685;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    h2{
+grid-column-start:2;
+    grid-row-start: 1;
+
+    }
+}
+.Aardbei{
+        grid-row: span 2 / span 2;
+        width:100%;
+        aspect-ratio: 1 / 1; 
+        height: 9.375em;     
+        object-fit: cover;
+        object-position: center;
+
+}
+.aardbei-tekst{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+/* gewone vlier*/
+.Gewone-vlier-container{
+    background-color:	#a67c52;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    h2{
+grid-column-start:2;
+    grid-row-start: 1;
+    }
+}
+.Gewone-vlier{
+        grid-row: span 2 / span 2;
+        width:100%;
+        aspect-ratio: 1 / 1;  
+        height: 9.375em;     
+        object-fit: cover;
+        object-position: center;
+  
+}
+
+.Gewone-vlier-tekst{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+/*Gele lis*/
+
+
+.Gele-lis-container {
+    background-color:	#8c6a4a;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    h2{
+grid-column-start:2;
+    grid-row-start: 1;
+    }
+}
+
+.Gele-lis{
+    grid-row: span 2 / span 2;
+    width:100%;
+    aspect-ratio: 1 / 1;  
+    height: 9.375em;     
+    object-fit: cover;
+    object-position: center;  
+}
+
+.gele-list-tekst{
+    grid-column-start: 2;
+    grid-row-start: 2;  
+}
+
+/* watermunt*/
+
+
+.watermunt-container{
+    background-color:	#d9b99b;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    h2{
+grid-column-start:2;
+    grid-row-start: 1;
+    }
+
+}
+
+
+.watermunt{
+    grid-row: span 2 / span 2;
+    width:100%;
+    aspect-ratio: 1 / 1;  
+    height: 9.375em;     
+    object-fit: cover;
+    object-position: center;
+}
+
+.watermunt-tekst{
+    grid-column-start: 2;
+    grid-row-start: 2;   
+}
+
+/*sierui*/
+
+.sierui-container{
+    background-color:	#b5835a;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    h2{
+grid-column-start:2;
+    grid-row-start: 1;
+    }
+
+}
+
+.sierui{
+    grid-row: span 2 / span 2;
+    width:100%;
+    aspect-ratio: 1 / 1;  
+    height: 9.375em;     
+    object-fit: cover;
+    object-position: center;
+}
+
+.sierui-tekst{
+    grid-column-start: 2;
+    grid-row-start: 2;   
+}
+
+/*silenetomentosa*/
+
+.silenetomentosa-container{
+    background-color:	#6e4f3a;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    h2{
+grid-column-start:2;
+    grid-row-start: 1;
+    }
+
+}
+
+.silenetomentosa{
+    grid-row: span 2 / span 2;
+    width:100%;
+    aspect-ratio: 1 / 1;  
+    height: 9.375em;     
+    object-fit: cover;
+    object-position: center;
+}
+
+.silenetomentosa-tekst{
+    grid-column-start: 2;
+    grid-row-start: 2;   
+}
+
+/*lavendel*/
+
+.lavendel-container{
+    background-color:	#e3cbb0;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    h2{
+grid-column-start:2;
+    grid-row-start: 1;
+    }
+
+}
+
+.lavendel{
+    grid-row: span 2 / span 2;
+    width:100%;
+    aspect-ratio: 1 / 1;  
+    height: 9.375em;     
+    object-fit: cover;
+    object-position: center;
+}
+
+.lavendel-tekst{
+    grid-column-start: 2;
+    grid-row-start: 2;   
+}
+
+
+/*teunisbloem*/
+.teunisbloem-container{
+    background-color: #9c7b5e;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    h2{
+grid-column-start:2;
+    grid-row-start: 1;
+    }
+
+}
+
+.teunisbloem{
+    grid-row: span 2 / span 2;
+    width:100%;
+    aspect-ratio: 1 / 1;  
+    height: 9.375em;     
+    object-fit: cover;
+    object-position: center;
+}
+
+.teunisbloem-tekst{
+    grid-column-start: 2;
+    grid-row-start: 2;   
+}
+
 
 .gebieden-lijst summary {
     position: relative;
@@ -62,8 +296,10 @@ aside {
     padding: 1em 1em 1em 2em;
     font-weight: bold;
     border-radius: 1em;
-    box-shadow: 0.5em 0.5em rgb(147, 175, 187)
 }
+
+
+
 
 .gebieden-lijst summary::before {
     content:"🌼"
