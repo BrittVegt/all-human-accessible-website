@@ -1,330 +1,235 @@
-html, body { /*overflow overkomen, dus pagina mag bijv nooit breder worden dan 100vw*/
-    max-width: 100vw;
-    overflow-x: hidden;
+@layer styleguide, site;
+
+@layer styleguide {
+
+  @font-face {
+    font-family: "Montserrat";
+    font-weight: 100 1000;
+    font-style: normal;
+    font-display: fallback;
+    src:
+      url("assets/fonts/Montserrat.woff2") format("woff2"),
+      url("assets/fonts/Montserrat.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Cherry Swash";
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+    src:
+      url("assets/fonts/CherrySwash-Regular.woff2") format("woff2"),
+      url("assets/fonts/CherrySwash-Regular.ttf") format("truetype");
+  }
+
+  html {
+    color-scheme: light dark;
+
+    /* Achtergrond: zacht, bijna grijsgroen — geen hard groen meer */
+    --achtergrond-kleur-mode-licht: #e4e8dd;
+    --achtergrond-kleur-mode-donker: #888266;
+    --achtergrond-kleur: light-dark(var(--achtergrond-kleur-mode-licht), var(--achtergrond-kleur-mode-donker));
+
+    /* Tekst: warm donkergrijs met groene ondertoon */
+    --tekst-kleur-mode-licht: #3a4032;
+    --tekst-kleur-mode-donker: #e6e9dd;
+    --tekst-kleur: light-dark(var(--tekst-kleur-mode-licht), var(--tekst-kleur-mode-donker));
+
+    /* Accent-1: gedempt taupe-bruin (header/nav) */
+    --accent-kleur-1-mode-licht: #9c8268;
+    --accent-kleur-1-mode-donker: #b8a48d;
+    --accent-kleur-1: light-dark(var(--accent-kleur-1-mode-licht), var(--accent-kleur-1-mode-donker));
+
+    /* Accent-2: zacht saliegroen (focus) */
+    --accent-kleur-2-mode-licht: #8a9c7e;
+    --accent-kleur-2-mode-donker: #b5c3a8;
+    --accent-kleur-2: light-dark(var(--accent-kleur-2-mode-licht), var(--accent-kleur-2-mode-donker));
+
+    /* Crème: warm, niet fel wit */
+    --crème-kleur-mode-licht: #f0ebe0;
+    --crème-kleur-mode-donker: #443d30;
+    --crème-kleur: light-dark(var(--crème-kleur-mode-licht), var(--crème-kleur-mode-donker));
+
+    --rand-straal: 1rem;
+    --font-cherry: "Cherry Swash", serif;
+    --font-montserrat: "Montserrat", sans-serif;
+  }
 }
 
-button:focus-visible { /* goed voor toetsenbord only, (dan komt er een rand)*/
-  outline: 2px solid rgb(235, 187, 148);
-  outline-offset: 2px;
-}
+@layer site {
 
-body {
+  html, body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  button:focus-visible {
+    outline: 2px solid var(--accent-kleur-2);
+    outline-offset: 2px;
+  }
+
+  body {
     margin: 0;
-    font-family: Trebuchet MS, sans-serif;
+    font-family: var(--font-montserrat);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: rgb(147, 176, 147);
+    background: var(--achtergrond-kleur);
+    color: var(--tekst-kleur);
     padding-bottom: 3.5em;
-}
+  }
 
-/* header */
-header { 
+  header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-color:#a67d51;
-    min-height: 3.5em; 
-    padding: 0 1.5em; 
+    background-color: var(--accent-kleur-1);
+    color: var(--crème-kleur);
+    min-height: 3.5em;
+    padding: 0 1.5em;
     width: 100%;
     box-sizing: border-box;
 
-    @media (min-width: 48.75em) { /*Responsive: Vanaf 48.75em alles naast elkaar*/
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        background-color: rgb(147, 176, 147);
-        padding: 0.5em 1.875em; 
-        background-color:#a67d51;
+    @media (min-width: 48.75em) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em 1.875em;
     }
-}
+  }
 
-aside {
-   @media (min-width: 39.375em) { /* op mobiel automatisch alles onder elkaar en dan grid gebruikt met desktop*/
-        display: grid;
-        grid-template-columns: 1fr 1fr;  
-   }
-}
-
-.gebieden img {
-    border-radius: 1em;
-}
-
-/* Dit is voor de zwarte puntjes weg te halen die voor de knoppen stonden */
-.gebieden-lijst {
-    list-style: none;   
-    padding-left: 0;    
+  header .logo {
     margin: 0;
-}
+    font-family: var(--font-cherry);
+    color: var(--crème-kleur);
+  }
 
-.gebieden-lijst summary::before {
-    content:"🌼"
-}
+  aside {
+    @media (min-width: 39.375em) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
-.gebieden-lijst summary {
+  .gebieden img {
+    border-radius: var(--rand-straal);
+  }
+
+  .gebieden-lijst {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .gebieden-lijst summary {
     position: relative;
-    background-color: antiquewhite;
-    color:rgb(147, 176, 147);
+    background-color: var(--crème-kleur);
+    color: var(--tekst-kleur);
     padding: 1em 1em 1em 2em;
     font-weight: bold;
-    border-radius: 1em;
-}
+    border-radius: var(--rand-straal);
+    font-family: var(--font-cherry);
+    cursor: pointer;
+  }
 
-/* aarbei */
-.aardbei-container{ /* elke plant heeft zelfde css, heb hier grid generator gebruikt*/
-      background-color:#c7a685;
-    display:grid;
+  .gebieden-lijst summary::before {
+    content: "🌼";
+  }
+
+  /* ---------- Plant-containers: afgezwakte, warme tinten ---------- */
+  .aardbei-container,
+  .Gewone-vlier-container,
+  .Gele-lis-container,
+  .watermunt-container,
+  .sierui-container,
+  .silenetomentosa-container,
+  .lavendel-container,
+  .teunisbloem-container {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 8px;
-    h2{
-grid-column-start:2;
+  }
+
+  /* Minder verzadigd dan je origineel, dichter bij elkaar */
+  .aardbei-container         { background-color: #c9b39a; }
+  .Gewone-vlier-container    { background-color: #b39d84; }
+  .Gele-lis-container        { background-color: #a8917a; }
+  .watermunt-container       { background-color: #c5b8a3; }
+  .sierui-container          { background-color: #b9a48b; }
+  .silenetomentosa-container { background-color: #9a8a76; }
+  .lavendel-container        { background-color: #d4c8b6; }
+  .teunisbloem-container     { background-color: #b5a48f; }
+
+  .aardbei-container h2,
+  .Gewone-vlier-container h2,
+  .Gele-lis-container h2,
+  .watermunt-container h2,
+  .sierui-container h2,
+  .silenetomentosa-container h2,
+  .lavendel-container h2,
+  .teunisbloem-container h2 {
+    grid-column-start: 2;
     grid-row-start: 1;
+    margin: 0;
+    font-family: var(--font-cherry);
+    color: var(--tekst-kleur);
+  }
 
-    }
-}
-.Aardbei{
-        grid-row: span 2 / span 2;
-        width:100%;
-        aspect-ratio: 1 / 1; 
-        height: 9.375em;     
-        object-fit: cover;
-        object-position: center;
+  .aardbei-container img,
+  .Gewone-vlier-container img,
+  .Gele-lis-container img,
+  .watermunt-container img,
+  .sierui-container img,
+  .silenetomentosa-container img,
+  .lavendel-container img,
+  .teunisbloem-container img {
+    grid-row: span 2 / span 2;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: 9.375em;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--rand-straal);
+  }
 
-}
-.aardbei-tekst{
+  .aardbei-container p,
+  .Gewone-vlier-container p,
+  .Gele-lis-container p,
+  .watermunt-container p,
+  .sierui-container p,
+  .silenetomentosa-container p,
+  .lavendel-container p,
+  .teunisbloem-container p {
     grid-column-start: 2;
     grid-row-start: 2;
-}
+    margin: 0;
+    color: var(--tekst-kleur);
+  }
 
-/* gewone vlier*/
-.Gewone-vlier-container{
-    background-color:	#a67c52;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    h2{
-grid-column-start:2;
-    grid-row-start: 1;
-    }
-}
-.Gewone-vlier{
-        grid-row: span 2 / span 2;
-        width:100%;
-        aspect-ratio: 1 / 1;  
-        height: 9.375em;     
-        object-fit: cover;
-        object-position: center;
-  
-}
-
-.Gewone-vlier-tekst{
-    grid-column-start: 2;
-    grid-row-start: 2;
-}
-
-/*Gele lis*/
-
-
-.Gele-lis-container {
-    background-color:	#8c6a4a;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    h2{
-grid-column-start:2;
-    grid-row-start: 1;
-    }
-}
-
-.Gele-lis{
-    grid-row: span 2 / span 2;
-    width:100%;
-    aspect-ratio: 1 / 1;  
-    height: 9.375em;     
-    object-fit: cover;
-    object-position: center;  
-}
-
-.gele-list-tekst{
-    grid-column-start: 2;
-    grid-row-start: 2;  
-}
-
-/* watermunt*/
-
-
-.watermunt-container{
-    background-color:	#d9b99b;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    h2{
-grid-column-start:2;
-    grid-row-start: 1;
-    }
-
-}
-
-
-.watermunt{
-    grid-row: span 2 / span 2;
-    width:100%;
-    aspect-ratio: 1 / 1;  
-    height: 9.375em;     
-    object-fit: cover;
-    object-position: center;
-}
-
-.watermunt-tekst{
-    grid-column-start: 2;
-    grid-row-start: 2;   
-}
-
-/*sierui*/
-
-.sierui-container{
-    background-color:	#b5835a;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    h2{
-grid-column-start:2;
-    grid-row-start: 1;
-    }
-
-}
-
-.sierui{
-    grid-row: span 2 / span 2;
-    width:100%;
-    aspect-ratio: 1 / 1;  
-    height: 9.375em;     
-    object-fit: cover;
-    object-position: center;
-}
-
-.sierui-tekst{
-    grid-column-start: 2;
-    grid-row-start: 2;   
-}
-
-/*silenetomentosa*/
-
-.silenetomentosa-container{
-    background-color:	#6e4f3a;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    h2{
-grid-column-start:2;
-    grid-row-start: 1;
-    }
-
-}
-
-.silenetomentosa{
-    grid-row: span 2 / span 2;
-    width:100%;
-    aspect-ratio: 1 / 1;  
-    height: 9.375em;     
-    object-fit: cover;
-    object-position: center;
-}
-
-.silenetomentosa-tekst{
-    grid-column-start: 2;
-    grid-row-start: 2;   
-}
-
-/*lavendel*/
-
-.lavendel-container{
-    background-color:	#e3cbb0;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    h2{
-grid-column-start:2;
-    grid-row-start: 1;
-    }
-
-}
-
-.lavendel{
-    grid-row: span 2 / span 2;
-    width:100%;
-    aspect-ratio: 1 / 1;  
-    height: 9.375em;     
-    object-fit: cover;
-    object-position: center;
-}
-
-.lavendel-tekst{
-    grid-column-start: 2;
-    grid-row-start: 2;   
-}
-
-
-/*teunisbloem*/
-.teunisbloem-container{
-    background-color: #9c7b5e;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    h2{
-grid-column-start:2;
-    grid-row-start: 1;
-    }
-
-}
-
-.teunisbloem{
-    grid-row: span 2 / span 2;
-    width:100%;
-    aspect-ratio: 1 / 1;  
-    height: 9.375em;     
-    object-fit: cover;
-    object-position: center;
-}
-
-.teunisbloem-tekst{
-    grid-column-start: 2;
-    grid-row-start: 2;   
-}
-
-
-
-.navigatie{
+  .navigatie {
     display: flex;
-    justify-content: space-around;   
-    padding: .625em;
+    justify-content: space-around;
+    padding: 0.625em;
     position: fixed;
     bottom: 0;
     inset-inline: 0;
-    background-color: #a67d51;
-    
+    background-color: var(--accent-kleur-1);
+    z-index: 10;
 
-     @media  (min-width: 48.75em) {
-       gap: 15em;
-    
+    @media (min-width: 48.75em) {
+      gap: 15em;
     }
+
     a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: .25em;
-        text-decoration: none;
-        color: black;
-        font-size: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25em;
+      text-decoration: none;
+      color: var(--crème-kleur);
+      font-size: 1em;
     }
-
+  }
 }
