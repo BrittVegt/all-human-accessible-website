@@ -223,6 +223,18 @@
       gap: 15em;
     }
 
+      .navigatie img {
+    width: 1.5em;        /* Maak ze allemaal even breed */
+    height: 1.5em;       /* Maak ze allemaal even hoog */
+    object-fit: contain; /* Zorgt dat de vorm niet vervormt, maar netjes past */
+    display: block;
+    
+    /* Zorgt ervoor dat zwarte iconen in dark mode wit worden (optioneel) */
+    @media (prefers-color-scheme: dark) {
+      filter: invert() contrast(80%);
+    }
+  }
+
     a {
       display: flex;
       flex-direction: column;
