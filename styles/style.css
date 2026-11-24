@@ -64,6 +64,31 @@
     overflow-x: clip;
   }
 
+      .fotokaart {
+        background-color: var(--accent-kleur-1);
+        border-radius: var(--rand-straal);
+        width: fit-content;
+
+        display: grid;
+        grid-template-rows: 1fr min-content;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: var(--afstand-klein);
+        padding: var(--afstand-klein);
+
+        :nth-child(1) {
+            border-radius: var(--rand-straal);
+        }
+
+        :nth-child(2) {
+            color: light-dark(var(--achtergrond-kleur), var(--accent-kleur-1-donker));
+            padding: var(--afstand-klein);
+            border-radius: var(--rand-straal);
+            font-family: var(--font-cherry);
+        }
+    }
+
+
   button:focus-visible {
     outline: 2px solid var(--accent-kleur-2);
     outline-offset: 2px;
