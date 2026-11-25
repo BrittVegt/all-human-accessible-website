@@ -58,36 +58,10 @@
 
 @layer site {
 
-
   html, body {
     max-width: 100%;
     overflow-x: clip;
   }
-
-      .fotokaart {
-        background-color: var(--accent-kleur-1);
-        border-radius: var(--rand-straal);
-        width: fit-content;
-
-        display: grid;
-        grid-template-rows: 1fr min-content;
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: var(--afstand-klein);
-        padding: var(--afstand-klein);
-
-        :nth-child(1) {
-            border-radius: var(--rand-straal);
-        }
-
-        :nth-child(2) {
-            color: light-dark(var(--achtergrond-kleur), var(--accent-kleur-1-donker));
-            padding: var(--afstand-klein);
-            border-radius: var(--rand-straal);
-            font-family: var(--font-cherry);
-        }
-    }
-
 
   button:focus-visible {
     outline: 2px solid var(--accent-kleur-2);
@@ -163,7 +137,7 @@
     content: "🌼";
   }
 
-  /* ---------- Plant-containers: afgezwakte, warme tinten ---------- */
+ 
   .aardbei-container,
   .Gewone-vlier-container,
   .Gele-lis-container,
@@ -178,7 +152,7 @@
     gap: 8px;
   }
 
-  /* Minder verzadigd dan je origineel, dichter bij elkaar */
+
   .aardbei-container         { background-color: #c9b39a; }
   .Gewone-vlier-container    { background-color: #b39d84; }
   .Gele-lis-container        { background-color: #a8917a; }
@@ -248,18 +222,6 @@
       gap: 15em;
     }
 
-      .navigatie img {
-    width: 1.5em;        /* Maak ze allemaal even breed */
-    height: 1.5em;       /* Maak ze allemaal even hoog */
-    object-fit: contain; /* Zorgt dat de vorm niet vervormt, maar netjes past */
-    display: block;
-    
-    /* Zorgt ervoor dat zwarte iconen in dark mode wit worden (optioneel) */
-    @media (prefers-color-scheme: dark) {
-      filter: invert() contrast(80%);
-    }
-  }
-
     a {
       display: flex;
       flex-direction: column;
@@ -270,29 +232,4 @@
       font-size: 1em;
     }
   }
-  /* Zorgt dat de kaart op mobiel horizontaal kan scrollen */
-.kaart-wrapper {
-    display: block;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    /* Een klein beetje ruimte onder de kaart */
-    margin-bottom: 1rem;
-}
-
-/* Dwing de afbeelding om groot te blijven, negeer de reset */
-.kaart-wrapper img {
-    max-width: none !important;
-    width: 800px; /* Pas dit getal aan als je hem groter/kleiner wil */
-    height: auto;
-    display: block;
-}
-
-/* Als het scherm breed genoeg is (desktop), mag de kaart weer normaal meeschalen */
-@media (min-width: 48.75em) {
-    .kaart-wrapper img {
-        width: 100%;
-    }
-}
 }
