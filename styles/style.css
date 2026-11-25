@@ -23,7 +23,7 @@
   }
 
   html {
-    color-scheme: light dark;
+    color-scheme: dark light;
 
    --achtergrond-kleur-mode-licht: #A6CFA4;
     --achtergrond-kleur-mode-donker:  #888266;
@@ -43,7 +43,7 @@
     --accent-kleur-2-mode-donker: #b5c3a8;
     --accent-kleur-2: light-dark(var(--accent-kleur-2-mode-licht), var(--accent-kleur-2-mode-donker));
 
-   --crème-kleur-mode-licht: #A6BDE2;
+   --crème-kleur-mode-licht: #a6d9e2;
     --crème-kleur-mode-donker:  #443d30;
     --crème-kleur: light-dark(var(--crème-kleur-mode-licht), var(--crème-kleur-mode-donker));
 
@@ -182,8 +182,8 @@
   max-width: 28rem;
   width: 100%;
 
-  border: 3px solid #604832;   /* ← bruine rand, iets dunner */
-  box-shadow: 0 4px 20px rgb(0 0 0 / 0.15);
+  border: 3px solid  #b8a48d;  /* ← bruine rand, iets dunner */
+  box-shadow: 0 4px 20px  #b8a48d(0 0 0 / 0.15);
 }
 
 .Nieuws .fotokaart {
