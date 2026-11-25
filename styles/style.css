@@ -23,26 +23,28 @@
   }
 
   html {
-    color-scheme: light dark;
+    color-scheme: light;
 
-    --achtergrond-kleur-mode-licht: #e4e8dd;
-    --achtergrond-kleur-mode-donker: #888266;
+   --achtergrond-kleur-mode-licht: #888266;
+    --achtergrond-kleur-mode-donker: #555c4f;
     --achtergrond-kleur: light-dark(var(--achtergrond-kleur-mode-licht), var(--achtergrond-kleur-mode-donker));
 
-    --tekst-kleur-mode-licht: #3a4032;
-    --tekst-kleur-mode-donker: #e6e9dd;
+    --tekst-kleur-mode-licht: #e6e9dd;
+    --tekst-kleur-mode-donker: #d6dbc9;
+  
     --tekst-kleur: light-dark(var(--tekst-kleur-mode-licht), var(--tekst-kleur-mode-donker));
     
-    --accent-kleur-1-mode-licht: #9c8268;
-    --accent-kleur-1-mode-donker: #b8a48d;
+    --accent-kleur-1-mode-licht: #b8a48d;
+    --accent-kleur-1-mode-donker: #5c4a3a;
+ 
     --accent-kleur-1: light-dark(var(--accent-kleur-1-mode-licht), var(--accent-kleur-1-mode-donker));
 
-    --accent-kleur-2-mode-licht: #8a9c7e;
-    --accent-kleur-2-mode-donker: #b5c3a8;
+     --accent-kleur-2-mode-licht: #b5c3a8;
+    --accent-kleur-2-mode-donker: #4a5540;
     --accent-kleur-2: light-dark(var(--accent-kleur-2-mode-licht), var(--accent-kleur-2-mode-donker));
 
-    --crème-kleur-mode-licht: #f0ebe0;
-    --crème-kleur-mode-donker: #443d30;
+   --crème-kleur-mode-licht: #443d30;
+    --crème-kleur-mode-donker:  #3a352b;
     --crème-kleur: light-dark(var(--crème-kleur-mode-licht), var(--crème-kleur-mode-donker));
 
     --rand-straal: 1rem;
@@ -89,7 +91,7 @@
     width: 100%;
     box-sizing: border-box;
 
-    
+
     @media (min-width: 48.75em) {
       flex-direction: row;
       justify-content: space-between;
@@ -115,23 +117,14 @@
     position: relative;
     background-color: var(--crème-kleur);
     color: var(--tekst-kleur);
-    padding: 0.5em 0.5em 0.5em 1em;
+    padding: 0.1em 0.1em 0.1em 0.2em;
     font-weight: bold;
     border-radius: var(--rand-straal);
     font-family: var(--font-cherry);
     cursor: pointer;
   }
 
-  .Veldverkenner {
-   position: relative;
-    background-color: var(--crème-kleur);
-    color: var(--tekst-kleur);
-    padding: 0.5em 0.5em 0.5em 1em;
-    font-weight: bold;
-    border-radius: var(--rand-straal);
-    font-family: var(--font-cherry);
-    cursor: pointer;
-  }
+
 
   .gebieden img {
     border-radius: var(--rand-straal);
@@ -173,7 +166,7 @@
     gap: 8px;
   }
 
-
+ 
   .aardbei-container         { background-color: #c9b39a; }
   .Gewone-vlier-container    { background-color: #b39d84; }
   .Gele-lis-container        { background-color: #a8917a; }
