@@ -107,6 +107,28 @@
     }
   }
 
+  .Nieuws {
+    position: relative;
+    background-color: var(--crème-kleur);
+    color: var(--tekst-kleur);
+    padding: 0.5em 0.5em 0.5em 1em;
+    font-weight: bold;
+    border-radius: var(--rand-straal);
+    font-family: var(--font-cherry);
+    cursor: pointer;
+  }
+
+  .Veldverkenner {
+   position: relative;
+    background-color: var(--crème-kleur);
+    color: var(--tekst-kleur);
+    padding: 0.5em 0.5em 0.5em 1em;
+    font-weight: bold;
+    border-radius: var(--rand-straal);
+    font-family: var(--font-cherry);
+    cursor: pointer;
+  }
+
   .gebieden img {
     border-radius: var(--rand-straal);
   }
