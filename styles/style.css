@@ -25,27 +25,22 @@
   html {
     color-scheme: light dark;
 
-    /* Achtergrond: zacht, bijna grijsgroen — geen hard groen meer */
     --achtergrond-kleur-mode-licht: #e4e8dd;
     --achtergrond-kleur-mode-donker: #888266;
     --achtergrond-kleur: light-dark(var(--achtergrond-kleur-mode-licht), var(--achtergrond-kleur-mode-donker));
 
-    /* Tekst: warm donkergrijs met groene ondertoon */
     --tekst-kleur-mode-licht: #3a4032;
     --tekst-kleur-mode-donker: #e6e9dd;
     --tekst-kleur: light-dark(var(--tekst-kleur-mode-licht), var(--tekst-kleur-mode-donker));
-
-    /* Accent-1: gedempt taupe-bruin (header/nav) */
+    
     --accent-kleur-1-mode-licht: #9c8268;
     --accent-kleur-1-mode-donker: #b8a48d;
     --accent-kleur-1: light-dark(var(--accent-kleur-1-mode-licht), var(--accent-kleur-1-mode-donker));
 
-    /* Accent-2: zacht saliegroen (focus) */
     --accent-kleur-2-mode-licht: #8a9c7e;
     --accent-kleur-2-mode-donker: #b5c3a8;
     --accent-kleur-2: light-dark(var(--accent-kleur-2-mode-licht), var(--accent-kleur-2-mode-donker));
 
-    /* Crème: warm, niet fel wit */
     --crème-kleur-mode-licht: #f0ebe0;
     --crème-kleur-mode-donker: #443d30;
     --crème-kleur: light-dark(var(--crème-kleur-mode-licht), var(--crème-kleur-mode-donker));
